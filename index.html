@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ganno Digital Hub</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    text-align: center;
+    padding: 22px 15px;
+    background: rgba(0,0,0,0.92);
+    border-bottom: 1px solid #d4af37;
+}
+
+.logo {
+    width: 175px;
+    max-width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.tagline {
+    color: #d4af37;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    padding: 14px 10px;
+    background: rgba(0,0,0,0.88);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 82vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 25px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.48),
+            rgba(0,0,0,0.65)
+        ),
+        url("Background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 44px;
+    line-height: 1.15;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #eeeeee;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c99a2e,
+            #f5d76e
+        );
+
+    color: #080808;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,0.30);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #c5c5c5;
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.38),
+            rgba(0,0,0,0.52)
+        ),
+        url("Background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.service-grid {
+
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap: 22px;
+}
+
+.service {
+
+    background: rgba(5,5,5,0.70);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    border:
+        1px solid
+        rgba(212,175,55,0.40);
+
+    border-radius: 20px;
+
+    padding: 30px 20px;
+
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.service h3 {
+    color: #f0c94f;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #eeeeee;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.price {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.70),
+            rgba(0,0,0,0.84)
+        ),
+        url("Background.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* CATEGORY TITLE */
+
+.category-title {
+
+    color: #d4af37;
+
+    font-size: 25px;
+
+    margin-top: 45px;
+
+    margin-bottom: 22px;
+
+    letter-spacing: 1px;
+}
+
+
+/* GALLERY */
+
+.gallery {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(190px,1fr)
+        );
+
+    gap: 18px;
+}
+
+
+/* GALLERY CARD */
+
+.work-card {
+
+    background: rgba(8,8,8,0.82);
+
+    border:
+        1px solid
+        rgba(212,175,55,0.35);
+
+    border-radius: 18px;
+
+    padding: 10px;
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.work-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 12px 30px
+        rgba(212,175,55,0.18);
+}
+
+
+/* WORK IMAGE */
+
+.work-card img {
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+}
+
+
+/* WORK INFO */
+
+.work-info {
+
+    padding: 14px 7px 7px;
+}
+
+.work-info h3 {
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.work-info p {
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.work-price {
+
+    color: #d4af37;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+
+/* SMALL BUTTON */
+
+.small-btn {
+
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    background: #d4af37;
+
+    color: #080808;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   WHY GANNO
+========================= */
+
+.why {
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.68),
+            rgba(0,0,0,0.78)
+        ),
+        url("Background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.why-grid {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px,1fr)
+        );
+
+    gap: 20px;
+}
+
+.why-card {
+
+    padding: 28px 20px;
+
+    background:
+        rgba(10,10,10,0.72);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    border:
+        1px solid
+        rgba(212,175,55,0.30);
+
+    border-radius: 18px;
+}
+
+.why-card h3 {
+
+    color: #d4af37;
+
+    margin-bottom: 10px;
+}
+
+.why-card p {
+
+    color: #cfcfcf;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+
+    padding: 75px 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.85),
+            rgba(0,0,0,0.92)
+        );
+}
+
+.cta h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.cta p {
+
+    color: #aaa;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 1px solid #242424;
+}
+
+footer h3 {
+
+    color: #d4af37;
+
+    margin-bottom: 7px;
+}
+
+footer p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px) {
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 55px 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .gallery {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 12px;
+    }
+
+    .work-card img {
+        height: 210px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <img
+        src="logo.png"
+        alt="Ganno Digital Hub Logo"
+        class="logo"
+    >
+
+    <div class="tagline">
+        CREATIVE • DIGITAL • BUSINESS
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="#home">HOME</a>
+
+    <a href="#services">SERVICES</a>
+
+    <a href="#portfolio">OUR WORK</a>
+
+    <a href="#why">WHY US</a>
+
+    <a href="#contact">CONTACT</a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <h1>
+
+        We Make Your
+
+        <span class="gold">
+            Ideas Digital.
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        Professional digital solutions
+        for businesses, creators and individuals.
+
+    </p>
+
+
+    <a
+        href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20would%20like%20to%20order%20your%20services."
+        class="btn"
+    >
+
+        📲 Order via WhatsApp
+
+    </a>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+    class="section services"
+    id="services"
+>
+
+    <h2 class="section-title">
+
+        Our Services & Pricing
+
+    </h2>
+
+
+    <p class="section-subtitle">
+
+        Creative solutions designed
+        to make your brand stand out.
+
+    </p>
+
+
+    <div class="service-grid">
+
+
+        <!-- POSTER -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎨
+            </div>
+
+            <h3>
+                Poster Design
+            </h3>
+
+            <p>
+                Professional posters for
+                events, businesses and social media.
+            </p>
+
+            <div class="price">
+                TSh 15,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20to%20order%20a%20Poster%20Design."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+        <!-- LOGO -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                🖼️
+            </div>
+
+            <h3>
+                Logo Design
+            </h3>
+
+            <p>
+                Unique and professional logos
+                for your brand or business.
+            </p>
+
+            <div class="price">
+                TSh 15,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20to%20order%20a%20Logo%20Design."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+        <!-- CV -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                📄
+            </div>
+
+            <h3>
+                CV Design
+            </h3>
+
+            <p>
+                Modern CV designs that
+                help your application stand out.
+            </p>
+
+            <div class="price">
+                TSh 10,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20to%20order%20a%20CV%20Design."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+        <!-- WEBSITE -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                🌐
+            </div>
+
+            <h3>
+                Website Design
+            </h3>
+
+            <p>
+                Modern websites for businesses,
+                organizations and personal brands.
+            </p>
+
+            <div class="price">
+                From TSh 100,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20to%20order%20a%20Website."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                📱
+            </div>
+
+            <h3>
+                Social Media Design
+            </h3>
+
+            <p>
+                Creative content for TikTok,
+                Instagram, Facebook and more.
+            </p>
+
+            <div class="price">
+                TSh 10,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20Social%20Media%20Design."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+        <!-- VIDEO -->
+
+        <div class="service">
+
+            <div class="service-icon">
+                🎬
+            </div>
+
+            <h3>
+                Video Editing
+            </h3>
+
+            <p>
+                Professional editing for
+                social media, events and businesses.
+            </p>
+
+            <div class="price">
+                From TSh 15,000
+            </div>
+
+            <a
+                href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20Video%20Editing."
+                class="btn"
+            >
+                Order Now
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section
+    class="section portfolio"
+    id="portfolio"
+>
+
+    <h2 class="section-title">
+        Our Work
+    </h2>
+
+    <p class="section-subtitle">
+
+        Explore some of our creative
+        design work.
+
+    </p>
+
+
+    <!-- POSTERS -->
+
+    <h3 class="category-title">
+        🎨 Poster Designs
+    </h3>
+
+
+    <div class="gallery">
+
+
+        <!-- POSTER 1 -->
+
+        <div class="work-card">
+
+            <img
+                src="Poster-sample.png"
+                alt="Poster Design Sample"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Event Poster
+                </h3>
+
+                <p>
+                    Premium promotional design.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Poster%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- POSTER 2 -->
+
+        <div class="work-card">
+
+            <img
+                src="Poster2-sample.png"
+                alt="Poster Design Sample 2"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Creative Poster
+                </h3>
+
+                <p>
+                    Modern promotional design.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Poster%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- POSTER 3 -->
+
+        <div class="work-card">
+
+            <img
+                src="Poster3-sample.png"
+                alt="Poster Design Sample 3"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Business Poster
+                </h3>
+
+                <p>
+                    Attractive business design.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Poster%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- POSTER 4 -->
+
+        <div class="work-card">
+
+            <img
+                src="Poster4-sample.png"
+                alt="Poster Design Sample 4"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Event Creative
+                </h3>
+
+                <p>
+                    Stylish event promotion.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Poster%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- POSTER 5 -->
+
+        <div class="work-card">
+
+            <img
+                src="Poster5-sample.png"
+                alt="Poster Design Sample 5"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Social Poster
+                </h3>
+
+                <p>
+                    Creative social media design.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Poster%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- LOGOS -->
+
+    <h3 class="category-title">
+        🖼️ Logo Designs
+    </h3>
+
+
+    <div class="gallery">
+
+
+        <!-- LOGO 1 -->
+
+        <div class="work-card">
+
+            <img
+                src="logo2.png"
+                alt="Logo Design Sample 1"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Brand Logo
+                </h3>
+
+                <p>
+                    Clean professional identity.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Logo%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGO 2 -->
+
+        <div class="work-card">
+
+            <img
+                src="logo3.png"
+                alt="Logo Design Sample 2"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Business Logo
+                </h3>
+
+                <p>
+                    Modern brand identity.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Logo%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGO 3 -->
+
+        <div class="work-card">
+
+            <img
+                src="Logo4.png"
+                alt="Logo Design Sample 3"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Creative Logo
+                </h3>
+
+                <p>
+                    Unique visual identity.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Logo%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGO 4 -->
+
+        <div class="work-card">
+
+            <img
+                src="logo5.png"
+                alt="Logo Design Sample 4"
+            >
+
+            <div class="work-info">
+
+                <h3>
+                    Premium Logo
+                </h3>
+
+                <p>
+                    Elegant business branding.
+                </p>
+
+                <div class="work-price">
+                    TSh 15,000
+                </div>
+
+                <a
+                    href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20want%20a%20Logo%20Design."
+                    class="small-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY GANNO
+========================= -->
+
+<section
+    class="section why"
+    id="why"
+>
+
+    <h2 class="section-title">
+        Why Ganno Digital Hub?
+    </h2>
+
+    <p class="section-subtitle">
+
+        We don't just design.
+        We help your ideas become reality.
+
+    </p>
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <h3>
+                ✨ Creative
+            </h3>
+
+            <p>
+                Modern and attractive designs
+                made to make your brand stand out.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                ⚡ Fast
+            </h3>
+
+            <p>
+                We respect your time and work
+                to deliver projects efficiently.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                💰 Affordable
+            </h3>
+
+            <p>
+                Professional digital services
+                at affordable prices.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                🤝 Reliable
+            </h3>
+
+            <p>
+                Your idea matters to us.
+                We work with you until you're satisfied.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="cta"
+    id="contact"
+>
+
+    <h2>
+        Have an Idea?
+    </h2>
+
+    <p>
+        Let's turn it into something amazing.
+    </p>
+
+
+    <a
+        href="https://wa.me/255619576049?text=Hello%20Ganno%20Digital%20Hub%2C%20I%20have%20a%20project%20I%20would%20like%20to%20discuss."
+        class="btn"
+    >
+        💬 Talk To Us
+    </a>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h3>
+        GANNO DIGITAL HUB
+    </h3>
+
+    <p>
+        Creative • Digital • Business
+    </p>
+
+    <p>
+        WhatsApp: +255 619 576 049
+    </p>
+
+    <p>
+        © 2026 Ganno Digital Hub.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
